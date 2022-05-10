@@ -1,0 +1,37 @@
+body {
+    color: #EEEEEE;
+    background-color: #141414;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 2em;
+    color: darkcyan;
+}
+
+h2 {
+    font-size: 1.6em;
+    color: lightblue;
+}
+
+h3 {
+    color: aliceblue;;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: lower-roman;
+}
+
+a {
+    text-decoration: none;
+}
+
