@@ -1,3 +1,10 @@
+* {
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
 body {
     color: #EEEEEE;
     background-color: #141414;
@@ -25,6 +32,7 @@ h1,h2,h3,h4,h5,h6 {
 
 ul {
     list-style-type: circle;
+    list-style-position: inside;
 }
 
 p {
@@ -33,7 +41,9 @@ p {
 
 li {
     font-family: "Helvetica", "Arial", sans-serif;
+    text-align: center;
 }
+
 
 
 
