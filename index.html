@@ -1,44 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <title>LSAPilot Portfolio</title>
-        <link rel="stylesheet" href="portfolio/style.css"/>
+        <link href="portfolio/style.css" rel="stylesheet"/>
     </head>
+    
     <body>
-        <div class="page">
-            <h1>LSAPilot Portfolio</h1>
-
-            <hr/>
-
-            <h2>Welcome to my Portfolio!</h2>
-
-            <p>
-                As the interested visiter you are i hope you are stoked to learn a bit more about me and my work!
-            </p>
-
-            <h3>My Work:</h3>
-
-            <p>
-                Well...
-            </p>
-
-            <img src="portfolio/images/aintMuchButHonest.jpg" width="250" alt="aint much but honest work"/>
-
-            <p>
-                But currently I am definetly working hard to get some more projects under my belt.<br/>
-                Why dont you check out this cool<a href="https://lpilot.pages.coco.study/startercode-gestaltungsportfolio-ws202122/" target="_blank">
-                P5js stuff</a>, which I made some time ago in the meantime.
-            </p>
-
-            <h3>My Degrees:</h3>
-
-            <p>
-                <ul>
-                    <li>Graduated School in 2019</li>
-                    <li>Tried some stuff like economics(which wasn't for me)</li>
-                    <li>Currently studying some random mixed up things in Code and Context and loving it.</li>
-                </ul>
-            </p>
+        
+        <div class="menu-container">
+            <div class="menu">
+                <div class="about">About</div>
+                <div class="skills">Skills</div>  
+                <div class="work">Work</div>
+                <div class="contact">Contact</div>
+            </div>             
         </div>
+        
+        <div class="header-container">
+            <div class="header">
+                <h1>Hello, I am Lorenz Pilot</h1>
+                <h2>Aspiring Web Designer & Software Developer</h2>
+                <div class="computer"><img src="portfolio/assets/Computer.svg"/></div>
+                <div class="vector1"><img src="portfolio/assets/Vector 1.svg"/></div>
+            </div>
+        </div>
+
+        <div class="about-container">
+            <div class="about">
+                <h3>About</h3>
+                <ul class="about-list">
+                    <li>Graduated School in 2019</li>
+                    <li>Tried some stuff like economics(which wasn’t for me)</li>
+                    <li>Currently studying some random mixed up things in Code and Context @TH Köln</li>
+                    <li>Just having fun learning and trying new things in Web & Software Development </li>
+                </ul>
+                <div class="vector2"><img src="portfolio/assets/Vector 2.svg"/></div>
+            </div>
+        </div>
+
+        <div class="skills-container">
+            <div class="skills">
+                <h3>Skills</h3>
+                <div class='dropdown-code'><span><img src="portfolio/assets/code zeichen.svg"/></span>
+                    <ul class="code-menu">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>(soon) JavaScript</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="dropdown-team"><span><img src="portfolio/assets/team zeichen.svg"/></span>
+                    <ul class="team-menu">
+                        <li>Agile Methods</li>
+                        <li>A bit designing</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+                <div class="vector3"><img src="portfolio/assets/Vector 3.svg"/></div>
+            </div>
+        </div>
+
+        <div class="work-container">
+            <div class="work">
+                <h3>Work</h3>
+                <p>Well its a bit empty here, but I working on filling it.</p>
+                <p>Why dont you take a quick look at <a href="#">this P5js work</a>, I have done some time ago.</p>
+                <div class="vector4"><img src="portfolio/assets/Vector 4.svg"/></div>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact">
+                <h3>Contact</h3>
+                <div class="socials"><img src="portfolio/assets/socials.svg"/></div>
+                <p>Feel free to Contact me anytime if there are any Questions or if you are <br/> interested in some of my Work.</p>
+                <div class="vector5"><img src="portfolio/asstes/vector 5.svg"/></div>
+            </div>
+        </div>
+        
+        <script src="app.js"></script>
     </body>
 </html>
