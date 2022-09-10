@@ -11,10 +11,10 @@ body {
 }
 
 .menu-container {
-    color: #CDD5D1;
     background-color: #946E83;
     position: fixed;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     flex-direction: row;
 
@@ -26,7 +26,17 @@ body {
 .menu {
     display: flex;
     justify-content: space-around;
-    top: 50px;
-    left: 50px;
+    width: 45%;
+    
+}
+
+.menu-item {
+    color: #CDD5D1;
+    text-align: center;
+    font-size: 24px;
+}
+
+.header-container {
+    padding-top: 90px;
 }
 
