@@ -9,6 +9,7 @@
 body {
     font-family: "Roboto", sans-serif;
     background-color: #615055;
+    margin: 0;
 }
 
 .menu-container {
@@ -48,17 +49,8 @@ a:visited {
     color: #CDD5D1;
 }
 
-.header-container {
-    padding-top: 150px;
-    padding-left: 70px;
-    width: 100%;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-}
 
 h1 {
-    margin-top: 20px;
     font-weight: 400;
     font-size: 70px;
     line-height: 75px;
@@ -71,9 +63,19 @@ h2 {
     line-height: 28px;
 }
 
-.header-container > h1, h2 {
-    color: #CDD5D1;
+h3 {
     font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 112px;
+
+    color: #946E83;
+}
+
+.header {
+    padding-top: 150px;
+    padding-left: 70px;
+    height: 500px;
 }
 
 .header-color {
@@ -81,18 +83,52 @@ h2 {
     font-style: normal;
 }    
 
-.header {
+.header-container {
     display: flex;
+    width: 100%;
+    margin: 0;
     align-items: flex-end;
-    justify-content: flex-end;
     border: 1px solid blue;
     flex-direction: column;
     height: 500px;
 }
 
-.computer {
-    align-self: flex-end;
+.header > h1, h2 {
+    color: #CDD5D1;
+    font-style: normal;
 }
+
+.vector1 {
+    margin-top: auto;
+}
+
+.about-container {
+    padding: 0;
+    margin: 0;
+}
+
+.about {
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+}
+
+.about-list {
+    margin-left: auto;
+}
+
+.about-list > li {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #CDD5D1;
+}
+
+
+
+
 
 
 
