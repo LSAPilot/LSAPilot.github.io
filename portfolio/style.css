@@ -97,7 +97,6 @@ p {
     width: 100%;
     margin: 0;
     align-items: flex-end;
-    border: 1px solid blue;
     flex-direction: column;
     height: 450px;
     position: relative;
@@ -121,7 +120,6 @@ p {
 
 .about {
     width: 100%;
-    border: 1px solid blue;
     height: 350px;
     position: relative;
 }
