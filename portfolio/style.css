@@ -115,36 +115,40 @@ p {
 }
 
 .about-container {
-    padding: 25px;
-    margin: 0;
+    border: 1px solid blue;
+    padding: 50px;
+    display: flex;
+    width: 100%;
+    height: auto;
 }
 
 .about {
-    width: 100%;
-    height: 400px;
-    position: relative;
+    border: 1px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
 }
 
 .about > h3 {
-    position: absolute;
-    left: 30px;
+    align-self: flex-start;
+    position: flex;
+    padding: 50px;
 }
 
 .about-list {
-    position: absolute;
-    top: 70px;
-    right: 50px;
-    list-style: circle;
+    position: flex;
+    padding: 50px;
+    list-style: none;
+}
+
+
+.profil {
+    padding: 50px;
 }
 
 .about-list > li {
-    padding: 10px;
-}
-
-.profil {
-    position: absolute;
-    margin-top: 5%;
-    left: 20%;
+    padding: 5px;
 }
 
 li {
@@ -229,6 +233,32 @@ li {
 .work > p {
     padding: 50px;
 }
+
+.contact-container {
+    padding: 50px;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+    flex-direction: row-reverse;
+}
+
+.contact > p {
+    padding: 50px;
+}
+
+.contact > h3 {
+    display: flex;
+    align-self: flex-start;
+    
+}
+
 
 
 
