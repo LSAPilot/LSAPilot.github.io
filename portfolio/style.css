@@ -126,7 +126,6 @@ a:link {
 }
 
 .about {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -142,6 +141,7 @@ a:link {
     position: flex;
     padding: 50px;
     list-style: none;
+    margin-left: auto;
 }
 
 
@@ -172,7 +172,7 @@ li {
 .skills-container {
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 400px;
@@ -182,6 +182,8 @@ li {
     display: flex;
     align-self: flex-start;
     flex-direction: column;
+    justify-content: flex-start;
+    margin-right: auto;
 }
 
 .dropdown-code:hover .code-menu {
@@ -190,7 +192,7 @@ li {
     background: #946E83;
     border-radius: 5px;
     padding-top: 10px;
-    box-shadow: 8px 8px 10px black;
+    box-shadow: 4px 4px 10px black;
 
     position: absolute;
     z-index: 1;
@@ -213,7 +215,8 @@ li {
 }
 
 .dropdown-code {
-    position: relative;
+    position: flex;
+    margin: auto;
 }
 
 .dropdown-code > span {
@@ -232,7 +235,7 @@ li {
 .work {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .work > h3 {
@@ -246,6 +249,20 @@ li {
     padding: 50px;
 }
 
+.p5js {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px black;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.p5js img {
+    width: 100%;
+}
+
 .contact-container {
     padding: 50px;
     display: flex;
@@ -256,7 +273,7 @@ li {
 .contact {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 300px;
     flex-direction: row-reverse;
 }
