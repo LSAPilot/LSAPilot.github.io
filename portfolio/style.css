@@ -161,7 +161,6 @@ li {
     padding-bottom: 250px;
     width: 100%;
     height: auto;
-    border: 1px solid blue;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -205,6 +204,29 @@ li {
     position: relative;
     cursor: pointer;
 }
+
+.work-container {
+    padding: 50px;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.work {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.work > h3 {
+    padding: 50px;
+}
+
+.work > p {
+    padding: 50px;
+}
+
+
 
 
 
