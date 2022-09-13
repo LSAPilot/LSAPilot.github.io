@@ -219,7 +219,11 @@ li {
 }
 
 .work > h3 {
+    display: flex;
     padding: 50px;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-self: flex-start;
 }
 
 .work > p {
