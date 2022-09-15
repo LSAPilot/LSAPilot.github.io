@@ -169,6 +169,7 @@ li {
     padding: 50px;
     width: 100%;
     height: auto;
+    flex-wrap: wrap;
 }
 
 .skills-container {
@@ -178,6 +179,7 @@ li {
     align-items: center;
     width: 100%;
     height: 400px;
+    flex-wrap: wrap;
 }
 
 .skills-container > h3 {
@@ -238,6 +240,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
 }
 
 .work > h3 {
