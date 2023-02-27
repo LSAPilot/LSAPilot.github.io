@@ -231,23 +231,17 @@ li {
 
 .work-container {
     padding: 50px;
-    display: flex;
     width: 100%;
     height: auto;
+
+    display: grid;
 }
 
 .work {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
     width: 100%;
-}
-
-.work > h3 {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-self: flex-start;
+    grid-gap: 20px;
 }
 
 .work > p {
@@ -255,12 +249,11 @@ li {
 }
 
 .p5js {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     box-shadow: 5px 5px 10px black;
 
-   
     vertical-align: middle;
 }
 
