@@ -15,9 +15,8 @@ body {
     overflow-y: visible;
     position: relative;
     height: unset;
-    color: #E0E2DB;
+    color: #222222;
     text-align: center;
-    background-color: #5F7470;
 }
 
 html, 
@@ -31,7 +30,7 @@ body {
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
-    background: #5F7470;
+    background: #ccb7ff;
 }
 
 img {
@@ -56,7 +55,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 24px 0 16px;
-    background: #889696;
+    background: #fff;
     box-shadow: 0 0 20px rgb(0 0 0 / 8%);
     font-size: large;
 }
@@ -95,7 +94,7 @@ p {
     flex-direction: column;
     text-align: center;
     gap: 40px;
-    background: #5F7470;
+    background: #ccb7ff;
 }
 
 .about-list {
@@ -113,7 +112,7 @@ p {
 }
 
 .footer {
-    background: #B8BDB5;
+    background: #e6e2ff;
 }
 
 .panel {
@@ -122,6 +121,5 @@ p {
 }
 
 .container .panel:nth-child(odd) {
-    background: #E0E2DB;
-    color: #5F7470;
+    background: #ffffff;
 }
