@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <title>LSAPilot Portfolio</title>
-        <link href="portfolio/style.css" rel="stylesheet"/>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio LSAPilot</title>
+        <link rel="stylesheet" href="portfolio/newStyle.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+        />
     </head>
     
-    <body>
-        
-        <div class="menu-container">
-            <div class="menu">
-                <div class="menu-item"><a href="#header">Menu</a></div>
-                <div class="menu-item"><a href="#about">About</a></div>  
-                <div class="menu-item"><a href="#skills">Skills</a></div>
-                <div class="menu-item"><a href="#work">Work</a></div>
-                <div class="menu-item"><a href="#contact">Contact</a></div>
-            </div>             
-        </div>
-        
-        <div id="header" class="header">
-            <h1>Hello,</h1>
-            <div class="header-color"><h1>I am Lorenz Pilot.</h1></div>
-            <h2>Aspiring Web Designer & Software Developer</h2>
-        </div>
-            <div class="header-container">
-               <div class="header-item">
-                <div class="computer"><img src="portfolio/assets/Computer.svg"/></div>
-                <div class="vector1"><img src="portfolio/assets/Vector 1.svg"/></div>
-               </div> 
-            </div>
-        </div>
+    <body> 
 
-        <div id="about" class="about-container">
-            <div class="about">
-                <h3>About</h3>
-                <div class="profil"><img src="portfolio/assets/profil.svg"/></div>
+        <nav>
+            <div id="menu">
+                <a href="#menu">Menu</a>
+                <a href="#skills">Skills</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>            
+        </nav>
+        
+        <section class="banner" id="banner">
+            <h1>Hello,</h1>
+            <h1 id="header-color">I am Lorenz Pilot.</h1>
+            <h2>Aspiring Web Designer & Software Developer</h2>
+            <img src="portfolio/assets/Computer.svg"/>
+            <img src="portfolio/assets/Vector 1.svg"/>
+        </section>
+
+        <div class="container">
+            <section class="panel about" id="about">
+                <h3>About Me</h3>
+                <img src="portfolio/assets/profil.svg"/>
                 <ul class="about-list">
                     <li>Graduated School in 2019</li>
                     <li>Tried some stuff like economics(which wasn’t for me)</li>
                     <li>Currently studying some random mixed up things in Code and Context @TH Köln</li>
                     <li>Just having fun learning and trying new things in Web & Software Development </li>
                 </ul>
-            </div>
-        </div>
-
-        <div id="skills" class="skills">
-            <div class="skills-container">
-                <h3>Skills</h3>
+            </section>
+            <section class="panel skills" id="skills">
+                <h3>My Skills</h3>
                 <div class='dropdown-code'><span><img src="portfolio/assets/code.svg"/></span>
                     <ul class="code-menu">
                         <li>HTML</li>
@@ -63,26 +63,33 @@
                         <li>Communication</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <div id="work" class="work-container">
-            <div class="work">
+            </section>
+            <section class="panel work" id="work">
                 <h3>Work</h3>
                 <p>Well its a bit empty here, but I am working on filling it. <br>
                     Why dont you take a quick look at <a href="https://lpilot.pages.coco.study/startercode-gestaltungsportfolio-ws202122/" target="_blank">this P5js work</a>, I have done some time ago.</p>
                 <div class="p5js"><img src="portfolio/assets/P5js.PNG"/></div>
-            </div>
+                <p>And here is a <a href="http://noetenesports.de/" target="_blank">Website</a> I am working on right now as a Hobbyproject.</p>
+            </section>
         </div>
-
-        <div id="contact" class="contact-container">
-            <div class="contact">
-                <div class="socials"><a href="portfolio/socials.html"><span><img src="portfolio/assets/socials.svg"/></span></a></div>
-                <p>Feel free to Contact me anytime if there are any Questions or if you are interested in some of my Work.</p>
+            <section class="footer" id="contact">
                 <h3>Contact</h3>
-            </div>
-        </div>
+                <p>Feel free to Contact me anytime if there are any Questions or if you are interested in some of my Work.</p>
+                <div class="socials"><a href="portfolio/socials.html"><span><img src="portfolio/assets/socials.svg"/></span></a></div>
+            </section>
         
-        <script src="app.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+            integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+            integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>    
+        <script src="portfolio/app.js"></script>
     </body>
 </html>
