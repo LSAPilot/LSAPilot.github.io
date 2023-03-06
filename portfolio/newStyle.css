@@ -37,6 +37,11 @@ h3 {
     font-size: 35px;
 }
 
+h1:hover, h2:hover, h3:hover {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+}
+
 .container {
     width: 300%;
     height: 100vh;
@@ -173,6 +178,7 @@ li {
 
 .work-grid-container>a {
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .footer {
