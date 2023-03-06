@@ -85,25 +85,6 @@ nav img {
     display: flex;
     justify-content: center;
     font-size: 20px;
-    background: (
-        to bottom,
-        hsl(257.75, 100%, 86.08%) 0%,
-        hsla(257.75, 100%, 86.08%, 0.928) 15.8%,
-        hsla(257.75, 100%, 86.08%, 0.861) 28.9%,
-        hsla(257.75, 100%, 86.08%, 0.796) 39.8%,
-        hsla(257.75, 100%, 86.08%, 0.734) 48.6%,
-        hsla(257.75, 100%, 86.08%, 0.674) 55.7%,
-        hsla(257.75, 100%, 86.08%, 0.615) 61.4%,
-        hsla(257.75, 100%, 86.08%, 0.556) 66%,
-        hsla(257.75, 100%, 86.08%, 0.496) 69.8%,
-        hsla(257.75, 100%, 86.08%, 0.436) 73.2%,
-        hsla(257.75, 100%, 86.08%, 0.373) 76.3%,
-        hsla(257.75, 100%, 86.08%, 0.307) 79.6%,
-        hsla(257.75, 100%, 86.08%, 0.237) 83.3%,
-        hsla(257.75, 100%, 86.08%, 0.164) 87.7%,
-        hsla(257.75, 100%, 86.08%, 0.085) 93.2%,
-        hsla(257.75, 100%, 86.08%, 0) 100%
-    );
 }
 
 .banner>h1, h2, .banner>h3 {
@@ -111,7 +92,7 @@ nav img {
     padding-left: 60px;
 }
 
-.banner>h2 {
+#header-color {
     color: #100039;
 }
 
@@ -153,19 +134,21 @@ li {
 }
 
 .skills-grid-container {
-    width: 100%;
+    width: 75%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 200px 200px;
     grid-auto-rows: minmax(200px, auto);
     grid-auto-flow: column;
     gap: 50px;
-    list-style: none;
 }
 
-.skills-grid-container>li {
+.skills-menu {
     font-size: 24px;
     margin: 10px;
+    opacity: 1;
+    text-align: center;
+    width: auto;
 }
 
 .team-menu, .code-menu {
