@@ -25,12 +25,28 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 37px;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+.banner {
+    
+}
+
 .container {
     width: 300%;
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
-    background: #ccb7ff;
+    background: #cdb8ff;
 }
 
 img {
@@ -100,8 +116,13 @@ section {
 
 p {
     opacity: 0.8;
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px;
+}
+
+li {
+    font-size: 20px;
+    opacity: 0.8;
 }
 
 .banner {
@@ -115,14 +136,39 @@ p {
     list-style: none;
 }
 
-.dropdown-code {
-    display: block;
-    position: relative;
+.skills-grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-auto-rows: minmax(200px, auto);
+    grid-auto-flow: column;
+    gap: 50px;
     list-style: none;
+}
+
+.skills-grid-container>li {
+    font-size: 24px;
+    margin: 10px;
 }
 
 .team-menu, .code-menu {
     list-style: none;
+}
+
+.work-grid-container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(200px, auto);
+    grid-auto-flow: row;
+    gap: 60px;
+}
+
+.work-grid-container>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
