@@ -122,11 +122,6 @@ p {
     padding: 10px;
 }
 
-li {
-    font-size: 20px;
-    opacity: 0.8;
-}
-
 .banner {
     flex-direction: column;
     text-align: center;
@@ -134,31 +129,27 @@ li {
     background: #ccb7ff;
 }
 
-.about-list {
-    list-style: none;
-}
-
 .skills-grid-container {
-    width: 75%;
+    width: 80%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-columns: 2fr 1fr;
     grid-auto-rows: minmax(200px, auto);
-    grid-auto-flow: column;
-    gap: 50px;
+    grid-auto-flow: row;
+    gap: 20px;
+    grid-gap: 10px;
 }
 
-.skills-menu {
+.skills-grid-container>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     font-size: 24px;
     margin: 10px;
     opacity: 1;
-    text-align: center;
-    width: auto;
-    list-style: none;
-}
-
-.team-menu, .code-menu {
-    list-style: none;
+    width: 100%;
+    height: 100%;
+    text-align: start;
 }
 
 .work-grid-container {
@@ -171,6 +162,7 @@ li {
 }
 
 .work-grid-container>p {
+    text-align: start;
     display: flex;
     align-items: center;
     justify-content: center;
