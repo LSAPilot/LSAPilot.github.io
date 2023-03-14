@@ -1,3 +1,15 @@
+
+const nav = document.querySelector("#nav");
+
+const onScroll = () => {
+  let scrollPosition = window.pageYOffset;
+
+    nav.classList.toggle("scrolled-down", scrollPosition>56);
+};
+
+document.addEventListener("scroll", onScroll, {passive: true})
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const sections = gsap.utils.toArray(".panel"),
