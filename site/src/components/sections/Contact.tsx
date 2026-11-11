@@ -1,16 +1,6 @@
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
-import { contact, profile, type ImageAsset } from "@/content/profile";
-
-function InlineImage({ image }: { image: ImageAsset }) {
-  return (
-    <span
-      aria-hidden="true"
-      className="mx-[0.15em] inline-block h-[0.8em] w-[1.9em] rounded-full bg-cover bg-center align-[-0.05em] contrast-125 transition-transform duration-700 ease-out hover:scale-105"
-      style={{ backgroundImage: `url(${image.src})` }}
-    />
-  );
-}
+import { contact, profile } from "@/content/profile";
 
 export function Contact() {
   const hasEmail = profile.email.length > 0;
@@ -26,16 +16,7 @@ export function Contact() {
           id="contact-title"
           className="mx-auto max-w-6xl text-[clamp(2.5rem,7vw,6rem)] leading-[1.05] font-black tracking-tight text-balance"
         >
-          {contact.heading.before}{" "}
-          {/* Keep each image glued to its word so a line never starts with a lone image. */}
-          <span className="whitespace-nowrap">
-            {contact.heading.middle}
-            <InlineImage image={profile.images.noethen} />
-          </span>{" "}
-          <span className="whitespace-nowrap">
-            <InlineImage image={profile.images.p5js} />
-            {contact.heading.after}
-          </span>
+          {contact.heading.before} {contact.heading.middle} {contact.heading.after}
         </h2>
         <p className="mx-auto mt-10 max-w-xl text-lg leading-relaxed text-muted md:text-xl">{contact.text}</p>
         <div className="mt-12 flex flex-wrap justify-center gap-3">

@@ -26,7 +26,7 @@ export function Hero() {
           <div className="animate-rise [animation-delay:150ms] motion-reduce:animate-none lg:col-span-5 lg:pt-8">
             <p className="text-2xl leading-snug font-medium text-paper md:text-3xl">{profile.role}.</p>
             <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
-              {profile.study}, building websites and software next to my studies.
+              {profile.study}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <ButtonLink href="#work">View my work</ButtonLink>

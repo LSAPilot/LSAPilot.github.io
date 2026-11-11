@@ -51,8 +51,8 @@ const images = {
 
 export const profile = {
   name: "Lorenz Pilot",
-  role: "Aspiring web designer and software developer",
-  study: "Studying Code and Context at TH Köln",
+  role: "Student, Web Developer and Tech Enthusiast",
+  study: "Studying Media Informatics M.Sc. at TH Köln, building software next to my studies.",
   githubUrl: "https://github.com/LSAPilot",
   /** Leave empty to hide the mail button and point the contact CTA at GitHub. */
   email: "",
@@ -67,15 +67,9 @@ export const navLinks: NavLink[] = [
 ];
 
 export const techStack: string[] = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Java",
-  "Python",
-  "Git",
-  "p5.js",
-  "Agile",
-  "Design",
+  "Fullstack Software Engineering",
+  "AI Workflows", 
+  "Scientific Work"
 ];
 
 export const skills = {
