@@ -35,9 +35,9 @@ function CodeSnippet() {
       aria-hidden="true"
       className="relative overflow-hidden rounded-2xl border border-line bg-ink/80 p-5 font-mono text-[13px] leading-6 text-paper/70 transition-transform duration-700 ease-out group-hover:scale-105"
     >
-      <span className="text-accent">class</span> Developer {"{\n"}
-      {"  "}String[] languages = {"{"}
-      <span className="text-sky-300">&quot;Java&quot;</span>, <span className="text-sky-300">&quot;Python&quot;</span>
+      <span className="text-accent">class</span> Storage {"{\n"}
+      {"  "}String[] databases = {"{"}
+      <span className="text-sky-300">&quot;MongoDB&quot;</span>, <span className="text-sky-300">&quot;Postgres&quot;</span>
       {"};\n}"}
     </pre>
   );
@@ -64,8 +64,8 @@ function BranchGraph() {
 
 /**
  * Gapless bento with grid-flow-dense.
- * lg (4 columns): frontend 2x2 + languages 2x1 + git 1x1 + teamwork 1x1 = 8 cells = 4 x 2.
- * md (2 columns): frontend 2 + languages 2 + git 1 + teamwork 1 = three full rows.
+ * lg (4 columns): full-stack 2x2 + data 2x1 + delivery 1x1 + ai 1x1 = 8 cells = 4 x 2.
+ * md (2 columns): full-stack 2 + data 2 + delivery 1 + ai 1 = three full rows.
  */
 export function Skills() {
   return (
@@ -73,12 +73,12 @@ export function Skills() {
       <Container>
         <SectionHeading
           id="skills-title"
-          title="What I bring to a team."
-          intro="A solid base in web and software development, plus the soft skills that make projects work."
+          title="What I build with."
+          intro="A focused stack for full-stack work, plus the know-how to build with AI."
         />
 
         <div className="mt-16 grid grid-flow-dense auto-rows-[minmax(17rem,auto)] gap-4 md:mt-20 md:grid-cols-2 lg:grid-cols-4">
-          <BentoCard {...skills.frontend} className="md:col-span-2 lg:row-span-2">
+          <BentoCard {...skills.fullstack} className="md:col-span-2 lg:row-span-2">
             <div className="relative overflow-hidden rounded-2xl bg-[#ece6ff] p-6 md:p-10">
               <Image
                 src="/images/coding.svg"
@@ -90,15 +90,15 @@ export function Skills() {
             </div>
           </BentoCard>
 
-          <BentoCard {...skills.languages} className="md:col-span-2">
+          <BentoCard {...skills.data} className="md:col-span-2">
             <CodeSnippet />
           </BentoCard>
 
-          <BentoCard {...skills.git}>
+          <BentoCard {...skills.delivery}>
             <BranchGraph />
           </BentoCard>
 
-          <BentoCard {...skills.teamwork} />
+          <BentoCard {...skills.ai} />
         </div>
       </Container>
     </section>

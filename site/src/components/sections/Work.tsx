@@ -9,23 +9,42 @@ import { profile, projects, type Project } from "@/content/profile";
 import { DESKTOP_MOTION_OK, gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
 function ProjectCard({ project }: { project: Project }) {
-  return (
-    <a
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-accent"
-    >
-      <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-line bg-ink-raised">
-        <Image
-          src={project.image.src}
-          alt={project.image.alt}
-          width={project.image.width}
-          height={project.image.height}
-          sizes="(min-width: 1024px) 55vw, 100vw"
-          className="size-full object-cover contrast-125 grayscale-[35%] transition duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
-        />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+  const { href } = project;
+  const contain = project.fit === "contain";
+  const content = (
+    <>
+      <div
+        className={`relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-line ${contain ? "bg-white" : "bg-ink-raised"}`}
+      >
+        {project.video ? (
+          <video
+            src={project.video}
+            poster={project.image.src}
+            aria-label={project.image.alt}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="size-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
+          />
+        ) : (
+          <Image
+            src={project.image.src}
+            alt={project.image.alt}
+            width={project.image.width}
+            height={project.image.height}
+            sizes="(min-width: 1024px) 55vw, 100vw"
+            className={
+              contain
+                ? "size-full object-contain p-4"
+                : "size-full object-cover contrast-125 grayscale-[35%] transition duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+            }
+          />
+        )}
+        {contain ? null : (
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+        )}
       </div>
       <div className="mt-7 flex flex-wrap items-start justify-between gap-x-8 gap-y-4">
         <div className="max-w-xl">
@@ -39,12 +58,33 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </ul>
         </div>
-        <span className="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-300 group-hover:bg-accent">
-          {project.linkLabel}
-          <ArrowIcon className="size-4" />
-          <span className="sr-only">(opens in a new tab)</span>
-        </span>
+        {href ? (
+          <span className="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-300 group-hover:bg-accent">
+            {project.linkLabel}
+            <ArrowIcon className="size-4" />
+            <span className="sr-only">(opens in a new tab)</span>
+          </span>
+        ) : (
+          <span className="inline-flex items-center rounded-full border border-line px-5 py-2.5 text-sm text-muted">
+            {project.linkLabel}
+          </span>
+        )}
       </div>
+    </>
+  );
+
+  if (!href) {
+    return <div className="group block rounded-[2rem]">{content}</div>;
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-accent"
+    >
+      {content}
     </a>
   );
 }
@@ -81,7 +121,7 @@ export function Work() {
               Selected work
             </h2>
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-muted">
-              Projects I designed and built, from creative coding to a full website. More are on the way.
+              A mix of research, a team project and a multiplayer game. More are on the way.
             </p>
             <ButtonLink href={profile.githubUrl} variant="ghost" external className="mt-10">
               More on GitHub

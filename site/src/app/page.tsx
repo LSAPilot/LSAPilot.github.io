@@ -16,8 +16,8 @@ export default function Home() {
       <main className="w-full max-w-full overflow-x-clip">
         <Hero />
         <TechMarquee />
-        <Skills />
         <Work />
+        <Skills />
         <AboutReveal />
         <Journey />
         <Contact />

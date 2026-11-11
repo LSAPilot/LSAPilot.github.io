@@ -13,9 +13,15 @@ export type Project = {
   title: string;
   summary: string;
   tags: string[];
-  href: string;
+  /** Omit for private projects; the card then renders without a link. */
+  href?: string;
   linkLabel: string;
+  /** Poster for the video, or the still image when there is no video. */
   image: ImageAsset;
+  /** Short muted loop shown instead of the still image. */
+  video?: string;
+  /** "contain" keeps charts uncropped on a light backdrop. Defaults to "cover". */
+  fit?: "cover" | "contain";
 };
 
 export type Skill = {
@@ -24,7 +30,10 @@ export type Skill = {
 };
 
 export type Milestone = {
+  /** Short label, always visible. */
   marker: string;
+  /** Start year, shown once the slice is open. */
+  year: string;
   title: string;
   description: string;
 };
@@ -47,6 +56,24 @@ const images = {
     width: 1600,
     height: 809,
   },
+  accessibilityPlugin: {
+    src: "/videos/accessibility-plugin-poster.webp",
+    alt: "The accessibility plugin showing accessibility information on a website",
+    width: 918,
+    height: 764,
+  },
+  tabooGame: {
+    src: "/videos/taboo-game-poster.webp",
+    alt: "A round of the Taboo browser game",
+    width: 1280,
+    height: 632,
+  },
+  jevBenchmark: {
+    src: "/images/jev-benchmarking.webp",
+    alt: "Bar chart comparing the accuracy of Jev (zero-shot) at 0.81 with DReqANN, ANN, DReqBiLSTM and BiLSTM",
+    width: 635,
+    height: 624,
+  },
 } satisfies Record<string, ImageAsset>;
 
 export const profile = {
@@ -60,86 +87,126 @@ export const profile = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#work" },
+  { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const techStack: string[] = [
-  "Fullstack Software Engineering",
-  "AI Workflows", 
-  "Scientific Work"
+  "Full-Stack Development",
+  "Local LLMs",
+  "Accessibility",
+  "Plain Language",
+  "Scientific Work",
+  "Requirements Engineering",
+  "AI Workflows",
+  "User Research",
 ];
 
 export const skills = {
-  frontend: {
-    title: "Frontend foundations",
+  fullstack: {
+    title: "Full-stack development",
     description:
-      "HTML, CSS and some JavaScript. I build responsive layouts and enjoy getting the small details of an interface right.",
+      "Java and Spring Boot on the backend, TypeScript and Angular on the frontend. I own features from the API to the interface.",
   },
-  languages: {
-    title: "Java and Python",
-    description: "Good knowledge in Java and some experience in Python.",
+  data: {
+    title: "Databases",
+    description: "MongoDB and Postgres, from data modelling to queries.",
   },
-  git: {
-    title: "Git",
-    description: "A good understanding of Git and working on shared code.",
+  delivery: {
+    title: "Git and Docker",
+    description: "Versioned, reproducible work on shared code.",
   },
-  teamwork: {
-    title: "Teams and product",
-    description:
-      "Agile methods, good communication, some design experience and start-up know-how from university.",
+  ai: {
+    title: "AI-assisted coding",
+    description: "Building faster with AI tools while keeping the code reviewed, tested and understood.",
   },
 } satisfies Record<string, Skill>;
 
 export const aboutStatement =
-  "Just having fun learning and trying new things in web and software development, next to my studies at TH Köln.";
+  "As a tech pragmatist, I am trying to find the right solution for each problem.";
+
+export type AboutFact = { label: string; text: string };
+
+export const aboutFacts: AboutFact[] = [
+  {
+    label: "Work",
+    text: "Working student in health software since 2023. Sole developer of a sales demo tool shown at three trade fairs, now becoming a live web app.",
+  },
+  {
+    label: "Studies",
+    text: "M.Sc. Media Informatics at TH Köln, focused on interactive and distributed systems.",
+  },
+  {
+    label: "Abroad",
+    text: "Software Engineering at Vilnius Tech, winter 2026/27.",
+  },
+  {
+    label: "Languages",
+    text: "German (native), English (C1).",
+  },
+];
+
+export const aboutOutro = "Off the keyboard: strength training, hiking and learning new tech.";
 
 export const projects: Project[] = [
   {
-    title: "Noethen eSports",
+    title: "Accessibility Plugin",
     summary:
-      "The website of the Noethen eSports team with games, gallery and team pages. A hobby project I design, build and keep improving.",
-    tags: ["Web design", "Frontend", "Hobby project"],
-    href: "http://noethenesports.de/",
-    linkLabel: "Visit website",
-    image: images.noethen,
+      "Born as a practical project in my bachelor studies, extended in my thesis with plain-language translation via local open-source LLMs, tested with the people it is built for.",
+    tags: ["Bachelor Thesis", "Local LLMs", "Plain Language", "User Testing", "Browser Plugin", "Team Project"],
+    linkLabel: "Private repository",
+    image: images.accessibilityPlugin,
+    video: "/videos/accessibility-plugin.mp4",
   },
   {
-    title: "Generative design portfolio",
+    title: "Requirements Classification Experiment",
     summary:
-      "Creative coding sketches built with p5.js for my design portfolio in the winter semester 2021/22.",
-    tags: ["p5.js", "JavaScript", "Creative coding"],
-    href: "https://lpilot.pages.coco.study/startercode-gestaltungsportfolio-ws202122/",
-    linkLabel: "View sketches",
-    image: images.p5js,
+      "An evaluation of the Jev decision model on classifying software requirements. I compared its results against the specially trained models of Rahman et al. (2024), using precision, F1 and Cohen's kappa.",
+    tags: ["Python", "AI Workflows", "Scientific Work", "Requirements Engineering"],
+    href: "https://github.com/LSAPilot/REclassificationExperiment",
+    linkLabel: "View on GitHub",
+    image: images.jevBenchmark,
+    fit: "contain",
+  },
+  {
+    title: "Taboo Game",
+    summary:
+      "My first real web project: the popular party game Taboo, rebuilt as a multiplayer browser game with lobbies and live gameplay over WebSockets.",
+    tags: ["JavaScript", "Node.js", "WebSockets", "Multiplayer"],
+    href: "https://github.com/LSAPilot/tabu-game",
+    linkLabel: "View on GitHub",
+    image: images.tabooGame,
+    video: "/videos/taboo-game.mp4",
   },
 ];
 
 export const milestones: Milestone[] = [
   {
-    marker: "2019",
+    marker: "School",
+    year: "2019",
     title: "Graduated from school",
     description: "Finished school and set out to find the field that really fits me.",
   },
   {
-    marker: "Detour",
-    title: "Tried economics",
-    description:
-      "I tried out different fields of work, economics among them. It was not really for me.",
-  },
-  {
-    marker: "TH Köln",
+    marker: "Bachelor of Science",
+    year: "Since 2025",
     title: "Code and Context",
     description:
-      "Studying Code and Context, with a mix of software development, design and start-up thinking.",
+      "Media Informatics at TH Köln: software development, design and start-up thinking. Thesis on an accessibility plugin with local LLMs.",
   },
   {
-    marker: "Now",
-    title: "Building for the web",
-    description:
-      "Learning new things in web and software development and shipping side projects like Noethen eSports.",
+    marker: "Working student",
+    year: "Since 2023",
+    title: "Health software",
+    description: "Full-stack development, from features to a sales demo tool shown at trade fairs.",
+  },
+  {
+    marker: "Master",
+    year: "Now",
+    title: "Media Informatics",
+    description: "Focus on interactive and distributed systems, with a semester abroad at Vilnius Tech.",
   },
 ];
 
