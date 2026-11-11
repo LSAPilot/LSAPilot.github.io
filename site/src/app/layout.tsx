@@ -3,10 +3,13 @@ import { profile } from "@/content/profile";
 import { satoshi } from "@/fonts";
 import "./globals.css";
 
-const description = `${profile.name}: ${profile.role}. ${profile.study}. Selected projects, skills and contact.`;
+/** Set NEXT_PUBLIC_SITE_URL in the hosting dashboard once the final domain is known. */
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lsapilot.pages.dev";
+
+const description = `${profile.name}: ${profile.role}. ${profile.study} Selected projects, skills and contact.`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lsapilot.github.io"),
+  metadataBase: new URL(siteUrl),
   title: `${profile.name} | Web Design and Software Development`,
   description,
   openGraph: {
