@@ -10,7 +10,7 @@ function MarqueeRow({ hidden = false }: { hidden?: boolean }) {
     <ul aria-hidden={hidden || undefined} className="flex shrink-0 items-center">
       {focusAreas.map((item) => (
         <li key={item} className="flex items-center">
-          <span className="px-5 text-[clamp(1.25rem,2.5vw,2rem)] font-semibold tracking-tight whitespace-nowrap text-paper/70 md:px-8">
+          <span className="px-5 text-[clamp(1.25rem,0.75rem+1.5vw,2rem)] font-semibold tracking-tight whitespace-nowrap text-paper/70 md:px-8">
             {item}
           </span>
           <SparkIcon className="size-3 text-accent/70 md:size-4" />

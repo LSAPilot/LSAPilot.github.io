@@ -12,7 +12,7 @@ export function Hero() {
       <Container>
         <h1
           id="hero-title"
-          className="max-w-6xl animate-rise text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.02] font-bold tracking-tight motion-reduce:animate-none"
+          className="max-w-6xl animate-rise text-[clamp(2.5rem,1.25rem+4.5vw,5.5rem)] leading-[1.02] font-bold tracking-tight motion-reduce:animate-none"
         >
           {hero.greeting} <span className="whitespace-nowrap text-accent">{profile.name}.</span>
         </h1>

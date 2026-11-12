@@ -43,7 +43,7 @@ export function Contact() {
         <h2
           id="contact-title"
           data-headline
-          className="mx-auto max-w-[90rem] text-[clamp(2.5rem,min(7.5vw,9.5vh),8rem)] leading-[1.02] font-black tracking-tight"
+          className="mx-auto max-w-[90rem] text-[clamp(2.5rem,1rem+min(6vw,7.5vh),8rem)] leading-[1.02] font-black tracking-tight"
         >
           {/* The trailing space keeps words apart in the accessible name; block spans add no whitespace. */}
           {contact.headline.map(({ text, accent }) => (

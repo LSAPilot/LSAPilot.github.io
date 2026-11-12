@@ -17,7 +17,7 @@ export function About() {
         </h2>
         <p
           data-statement
-          className="mx-auto max-w-5xl text-center text-[clamp(1.875rem,4vw,3.5rem)] leading-[1.15] font-bold tracking-tight text-balance"
+          className="mx-auto max-w-5xl text-center text-[clamp(1.875rem,1rem+2.75vw,3.5rem)] leading-[1.15] font-bold tracking-tight text-balance"
         >
           {/* Words are wrapped individually so they can brighten one by one; the spaces stay real text. */}
           {words.map((word, index) => (
