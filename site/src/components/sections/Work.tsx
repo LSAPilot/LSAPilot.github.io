@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
 import { MotionSection } from "@/components/motion/MotionSection";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
@@ -34,19 +33,26 @@ function ProjectMedia({ media }: { media: Media }) {
   );
 }
 
-/** Links the whole card when the project is public; private projects render as a plain block. */
-function CardFrame({ href, children }: { href?: string; children: ReactNode }) {
-  const className = "group block rounded-[2rem]";
-  if (!href) return <div className={className}>{children}</div>;
-
+/**
+ * The project link. Its ::after stretches over the whole card, so the card stays clickable
+ * while the link itself has a short, unique name instead of the card's entire text.
+ */
+function ProjectLink({ href, label, project }: { href: string; label: string; project: string }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cx(className, "focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-accent")}
+      className={cx(
+        "inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-300 group-hover:bg-accent",
+        "after:absolute after:inset-0 after:rounded-[2rem] after:content-['']",
+        // The focus ring is drawn around the whole card, matching what the link covers.
+        "focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-8 focus-visible:after:outline-accent",
+      )}
     >
-      {children}
+      {label}
+      <ArrowIcon className="size-4" />
+      <span className="sr-only">: {project} (opens in a new tab)</span>
     </a>
   );
 }
@@ -56,7 +62,7 @@ function ProjectCard({ project }: { project: Project }) {
   const contain = media.kind === "image" && media.fit === "contain";
 
   return (
-    <CardFrame href={href}>
+    <article className="group relative rounded-[2rem]">
       <div
         className={cx(
           "relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-line",
@@ -76,18 +82,14 @@ function ProjectCard({ project }: { project: Project }) {
           <TagList items={project.tags} label="Technologies" className="mt-5" />
         </div>
         {href ? (
-          <span className="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-300 group-hover:bg-accent">
-            {project.linkLabel}
-            <ArrowIcon className="size-4" />
-            <span className="sr-only">(opens in a new tab)</span>
-          </span>
+          <ProjectLink href={href} label={project.linkLabel} project={project.title} />
         ) : (
           <span className="inline-flex items-center rounded-full border border-line px-5 py-2.5 text-sm text-muted">
             {project.linkLabel}
           </span>
         )}
       </div>
-    </CardFrame>
+    </article>
   );
 }
 
