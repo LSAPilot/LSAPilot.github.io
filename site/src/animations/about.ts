@@ -10,12 +10,14 @@ export const aboutMotion: MotionSetups = {
 
     gsap.fromTo(
       statement.querySelectorAll("[data-word]"),
-      { opacity: 0.1 },
+      // Starts dimmed and is fully bright by the time the statement reaches the middle of the
+      // screen, so it is only low-contrast while it is still entering the viewport.
+      { opacity: 0.25 },
       {
         opacity: 1,
         ease: "none",
         stagger: 0.1,
-        scrollTrigger: { trigger: statement, start: "top 80%", end: "bottom 45%", scrub: true },
+        scrollTrigger: { trigger: statement, start: "top 85%", end: "center 55%", scrub: true },
       },
     );
   },

@@ -70,12 +70,12 @@ function CodeEditor() {
     <div aria-hidden="true" className={cx("relative rounded-2xl border border-line bg-ink/80 p-5", zoomOnHover)}>
       <div className="mb-4 flex items-center gap-2 font-mono text-xs">
         <span className="rounded-md bg-paper/10 px-2.5 py-1 text-paper">Java</span>
-        <span className="rounded-md px-2.5 py-1 text-paper/40">TypeScript</span>
+        <span className="rounded-md px-2.5 py-1 text-paper/60">TypeScript</span>
       </div>
       <div className="flex flex-col gap-1.5">
         {EDITOR_LINES.map((line, i) => (
           <div key={i} className="flex h-5 items-center gap-2">
-            <span className="w-4 shrink-0 text-right font-mono text-[11px] text-paper/25 tabular-nums">{i + 1}</span>
+            <span className="w-4 shrink-0 text-right font-mono text-[11px] text-paper/55 tabular-nums">{i + 1}</span>
             <div className="flex items-center gap-1.5" style={{ marginLeft: line.indent * 16 }}>
               {line.tokens.map(([width, tone], j) => (
                 <span key={j} data-token className={cx("block h-2.5 rounded-full", TOKEN_TONES[tone])} style={{ width }} />

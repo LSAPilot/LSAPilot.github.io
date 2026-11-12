@@ -99,10 +99,11 @@ body::after {
 }
 
 /* Outlined display text, a nod to the stroked headings of the previous site.
-   Declared as a utility so variants like lg:text-paper can override it. */
+   Declared as a utility so variants like lg:text-paper can override it.
+   The stroke is strong enough for 3:1 against the cards (WCAG 1.4.3, large text). */
 @utility text-outline {
   color: transparent;
-  -webkit-text-stroke: 1px rgb(244 241 255 / 0.35);
+  -webkit-text-stroke: 1px rgb(244 241 255 / 0.6);
 }
 
 /* Pauses a CSS animation; used by the marquee's pause button. !important because the
