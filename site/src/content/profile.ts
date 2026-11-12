@@ -203,7 +203,7 @@ export const milestones: Milestone[] = [
     description: "Full-stack development, from features to a sales demo tool shown at trade fairs.",
   },
   {
-    marker: "Master",
+    marker: "Master of Science",
     year: "Now",
     title: "Media Informatics",
     description: "Focus on interactive and distributed systems, with a semester abroad at Vilnius Tech.",
