@@ -101,10 +101,8 @@ export const navLinks: NavLink[] = [
 export const techStack: string[] = [
   "Full-Stack Development",
   "AI Augmented Applications",
-  "Accessibility",
-  "Scientific Work",
-  "Health Domain Knowledge",
-  "Workflow Automation",
+  "Automations",
+  "Research"
 ];
 
 export const skills = {

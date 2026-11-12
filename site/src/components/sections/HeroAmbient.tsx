@@ -24,7 +24,8 @@ export function HeroAmbient() {
 
       const mm = gsap.matchMedia();
       mm.add(CURSOR_MOTION_OK, () => {
-        const half = s.offsetWidth / 2;
+        // Measured on the first move, not at setup: the stylesheet may not be applied yet when this runs.
+        let half = 0;
 
         const spotX = gsap.quickTo(s, "x", { duration: 0.7, ease: "power3" });
         const spotY = gsap.quickTo(s, "y", { duration: 0.7, ease: "power3" });
@@ -44,6 +45,7 @@ export function HeroAmbient() {
           if (!inside) {
             // First move: start under the cursor instead of flying in from the corner.
             inside = true;
+            half = s.offsetWidth / 2;
             gsap.set(s, { x: px - half, y: py - half });
             spotOpacity(1);
           }

@@ -4,6 +4,7 @@ import { Fragment, useRef } from "react";
 import { Container } from "@/components/ui/Container";
 import { aboutFacts, aboutOutro, aboutStatement } from "@/content/profile";
 import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
+import { AboutAmbient } from "./AboutAmbient";
 
 /** Words brighten one after another as the statement scrolls through the viewport. */
 export function AboutReveal() {
@@ -35,11 +36,8 @@ export function AboutReveal() {
   );
 
   return (
-    <section ref={scope} id="about" aria-labelledby="about-title" className="relative scroll-mt-24 py-32 md:py-48">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 mx-auto h-80 max-w-3xl -translate-y-1/2 rounded-full bg-accent-strong/10 blur-[120px]"
-      />
+    <section ref={scope} id="about" aria-labelledby="about-title" className="relative isolate scroll-mt-24 py-32 md:py-48">
+      <AboutAmbient />
       <Container>
         <h2 id="about-title" className="sr-only">
           About me
