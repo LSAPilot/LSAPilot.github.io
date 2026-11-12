@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
-@theme inline {
+/* "static" always emits these tokens as CSS variables. Tailwind would otherwise only emit the ones
+   it finds in class names, and tokens used from inline styles (e.g. Journey's tones) would be undefined. */
+@theme inline static {
   --color-ink: #08070d;
   --color-ink-raised: #12101c;
   --color-paper: #f4f1ff;
   --color-muted: #a9a3bd;
   --color-accent: #ccb7ff;
   --color-accent-strong: #8b7bff;
+  /* Cool counterpart to the violet accents in glows and gradients. */
+  --color-sky: #38bdf8;
   --color-line: rgb(244 241 255 / 0.1);
   --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;

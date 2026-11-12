@@ -1,6 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { Nav } from "@/components/layout/Nav";
-import { AboutReveal } from "@/components/sections/AboutReveal";
+import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Journey } from "@/components/sections/Journey";
@@ -18,7 +18,7 @@ export default function Home() {
         <TechMarquee />
         <Work />
         <Skills />
-        <AboutReveal />
+        <About />
         <Journey />
         <Contact />
       </main>

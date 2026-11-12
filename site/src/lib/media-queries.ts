@@ -1,0 +1,11 @@
+/** Animations only run when the visitor has not asked for reduced motion. */
+export const MOTION_OK = "(prefers-reduced-motion: no-preference)";
+
+/** The opposite of MOTION_OK, for media that has to be paused rather than not animated. */
+export const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
+
+/** Cursor-following effects need a real pointer that can hover, so not touch devices. */
+export const CURSOR_MOTION_OK = `(hover: hover) and (pointer: fine) and ${MOTION_OK}`;
+
+/** Pinning needs room next to the pinned column, so it is desktop only. */
+export const DESKTOP_MOTION_OK = `(min-width: 1024px) and ${MOTION_OK}`;
