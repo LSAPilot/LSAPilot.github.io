@@ -9,7 +9,7 @@ export function About() {
   const words = about.statement.split(" ");
 
   return (
-    <MotionSection motion="about" id="about" aria-labelledby="about-title" className="relative isolate scroll-mt-24 py-32 md:py-48">
+    <MotionSection motion="about" id="about" aria-labelledby="about-title" className="relative isolate py-32 md:py-48">
       <AboutAmbient />
       <Container>
         <h2 id="about-title" className="sr-only">

@@ -18,6 +18,7 @@ const RING_PATH_ID = "contact-ring-path";
  *
  * Together with the footer it fills exactly one screen: the min-heights subtract the
  * footer's height (14.1rem stacked on mobile, 7.6rem from md). Keep them in sync with Footer.
+ * The negative scroll margin cancels html's scroll-padding-top, so #contact lands flush.
  */
 export function Contact() {
   const hasEmail = profile.email.length > 0;
@@ -31,7 +32,7 @@ export function Contact() {
       motion="contact"
       id="contact"
       aria-labelledby="contact-title"
-      className="relative isolate flex min-h-[calc(100svh-14.1rem)] flex-col justify-center overflow-hidden py-8 md:min-h-[calc(100svh-7.6rem)]"
+      className="relative isolate flex -scroll-mt-24 min-h-[calc(100svh-14.1rem)] flex-col justify-center overflow-hidden py-8 md:min-h-[calc(100svh-7.6rem)]"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute bottom-0 left-1/2 h-[36rem] w-[70rem] -translate-x-1/2 translate-y-1/3 rounded-full bg-accent-strong/35 blur-[160px]" />

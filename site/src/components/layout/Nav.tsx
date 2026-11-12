@@ -35,7 +35,8 @@ export function Nav() {
     <header
       className={cx(
         "fixed inset-x-0 top-4 z-50 flex justify-center px-4 transition-transform duration-500 ease-out motion-reduce:transition-none",
-        hidden ? "-translate-y-[150%]" : "translate-y-0",
+        // focus-within: a keyboard user tabbing into the hidden nav must see where focus is (WCAG 2.4.11).
+        hidden ? "-translate-y-[150%] focus-within:translate-y-0" : "translate-y-0",
       )}
     >
       <nav

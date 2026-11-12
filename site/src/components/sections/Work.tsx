@@ -94,7 +94,7 @@ function ProjectCard({ project }: { project: Project }) {
 /** Pinned intro on the left while the project gallery scrolls past on the right (desktop only). */
 export function Work() {
   return (
-    <MotionSection motion="work" id="work" aria-labelledby="work-title" className="scroll-mt-24 py-32 md:py-48">
+    <MotionSection motion="work" id="work" aria-labelledby="work-title" className="py-32 md:py-48">
       <Container className="grid gap-16 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
           <div data-pin>

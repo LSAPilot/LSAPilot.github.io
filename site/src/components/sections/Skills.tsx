@@ -158,7 +158,7 @@ export function Skills() {
   const { languages, databases, devops, ai } = skills.cards;
 
   return (
-    <MotionSection motion="skills" id="skills" aria-labelledby="skills-title" className="scroll-mt-24 py-32 md:py-48">
+    <MotionSection motion="skills" id="skills" aria-labelledby="skills-title" className="py-32 md:py-48">
       <Container>
         <SectionHeading id="skills-title" title={skills.title} intro={skills.intro} />
 
