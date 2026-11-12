@@ -3,11 +3,14 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
 
+# Hashed file names: safe to cache forever.
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Not hashed: a replaced file keeps its name, so browsers must revalidate.
+# One day fresh, then served from cache for up to a week while revalidating.
 /videos/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

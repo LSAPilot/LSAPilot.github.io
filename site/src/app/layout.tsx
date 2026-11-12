@@ -3,8 +3,8 @@ import { profile } from "@/content/profile";
 import { satoshi } from "@/fonts";
 import "./globals.css";
 
-/** Set NEXT_PUBLIC_SITE_URL in the hosting dashboard once the final domain is known. */
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lsapilot.pages.dev";
+/** Set NEXT_PUBLIC_SITE_URL at build time once a custom domain is in place; defaults to the live Workers URL. */
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio.lsapilot.workers.dev";
 
 const description = `${profile.name}: ${profile.role}. ${profile.study} Selected projects, skills and contact.`;
 
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  // Same value as --color-ink in globals.css; metadata cannot read CSS variables.
   themeColor: "#08070d",
 };
 
