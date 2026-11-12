@@ -1,6 +1,7 @@
 import { gsap } from "@/lib/gsap";
 import { MOTION_OK } from "@/lib/media-queries";
 import type { MotionSetups } from "@/lib/motion";
+import { twinkleStars } from "./stars";
 
 /** Words of the statement brighten one after another as it scrolls through the viewport. */
 export const aboutMotion: MotionSetups = {
@@ -44,12 +45,6 @@ export const aboutAmbientMotion: MotionSetups = {
       );
     });
 
-    gsap.utils.toArray<HTMLElement>("[data-star]", root).forEach((star, i) => {
-      gsap.fromTo(
-        star,
-        { opacity: 0.08 },
-        { opacity: 0.85, duration: 2 + (i % 4) * 0.8, delay: (i * 0.37) % 3, ease: "sine.inOut", repeat: -1, yoyo: true },
-      );
-    });
+    twinkleStars(root);
   },
 };

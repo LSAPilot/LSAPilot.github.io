@@ -2,10 +2,10 @@
 
 import { useRef } from "react";
 import { aboutAmbientMotion } from "@/animations/about";
+import { Starfield, type Star } from "@/components/ui/Starfield";
 import { useScopedMotion } from "@/lib/motion";
 
-/** Star positions in percent, fixed so server and client render the same markup. */
-const STARS: ReadonlyArray<readonly [left: number, top: number]> = [
+const STARS: ReadonlyArray<Star> = [
   [6, 12], [14, 64], [22, 30], [31, 82], [38, 8], [47, 52], [55, 90],
   [63, 22], [71, 70], [79, 14], [86, 48], [92, 84], [96, 28], [44, 36],
 ];
@@ -27,14 +27,7 @@ export function AboutAmbient() {
       <div data-aurora className="absolute bottom-[8%] left-[34%] size-[26rem] rounded-full bg-accent/15 blur-[120px] will-change-transform" />
       {/* Stars stay inside the section itself. */}
       <div className="absolute inset-x-0 top-48 bottom-48">
-        {STARS.map(([left, top]) => (
-          <span
-            key={`${left}-${top}`}
-            data-star
-            className="absolute size-1 rounded-full bg-accent opacity-40"
-            style={{ left: `${left}%`, top: `${top}%` }}
-          />
-        ))}
+        <Starfield stars={STARS} />
       </div>
     </div>
   );
