@@ -1,18 +1,15 @@
-import Image from "next/image";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { profile } from "@/content/profile";
+import { HeroAmbient } from "./HeroAmbient";
 
 export function Hero() {
   const art = profile.images.p5js;
 
   return (
     <section id="top" aria-labelledby="hero-title" className="relative isolate flex min-h-svh items-center pt-36 pb-24 md:pt-44">
-      {/* Ambient mesh: two soft color fields behind the content. */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -left-32 size-[38rem] rounded-full bg-accent-strong/25 blur-[140px]" />
-        <div className="absolute top-1/3 -right-40 size-[32rem] rounded-full bg-sky-500/15 blur-[140px]" />
-      </div>
+      {/* Ambient mesh: two soft color fields and a cursor spotlight behind the content. */}
+      <HeroAmbient />
 
       <Container>
         <h1
@@ -38,13 +35,15 @@ export function Hero() {
 
           <figure className="group animate-rise [animation-delay:300ms] motion-reduce:animate-none lg:col-span-4 lg:col-start-9">
             <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-line bg-ink-raised">
-              <Image
-                src={art.src}
-                alt={art.alt}
-                width={art.width}
-                height={art.height}
-                priority
-                sizes="(min-width: 1024px) 40vw, 100vw"
+              <video
+                src={profile.heroVideo}
+                poster={art.src}
+                aria-label={art.alt}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
                 className="size-full object-cover contrast-125 saturate-[1.1] transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgb(8_7_13/0.7))]" />

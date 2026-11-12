@@ -45,10 +45,11 @@ export type NavLink = {
 
 const images = {
   p5js: {
-    src: "/images/p5js-portfolio.webp",
+    /** Poster frame for the hero video. */
+    src: "/videos/hero-sketch-poster.webp",
     alt: "Generative p5.js artwork of colorful lines bursting from a dark center",
-    width: 499,
-    height: 501,
+    width: 496,
+    height: 496,
   },
   noethen: {
     src: "/images/noethen-esports.webp",
@@ -79,11 +80,13 @@ const images = {
 export const profile = {
   name: "Lorenz Pilot",
   role: "Student, Web Developer and Tech Enthusiast",
-  study: "Studying Media Informatics M.Sc. at TH Köln, building software next to my studies.",
+  study: "Studying Media Informatics M.Sc. at TH Köln, building digital solutions next to my studies.",
   githubUrl: "https://github.com/LSAPilot",
   /** Leave empty to hide the mail button and point the contact CTA at GitHub. */
   email: "",
   images,
+  /** Screen recording of the p5.js sketch, shown in the hero. `images.p5js` is its poster. */
+  heroVideo: "/videos/hero-sketch.mp4",
 };
 
 export const navLinks: NavLink[] = [
@@ -95,20 +98,18 @@ export const navLinks: NavLink[] = [
 
 export const techStack: string[] = [
   "Full-Stack Development",
-  "Local LLMs",
+  "AI Augmented Applications",
   "Accessibility",
-  "Plain Language",
   "Scientific Work",
-  "Requirements Engineering",
-  "AI Workflows",
-  "User Research",
+  "Health Domain Knowledge",
+  "Workflow Automation",
 ];
 
 export const skills = {
   fullstack: {
     title: "Full-stack development",
     description:
-      "Java and Spring Boot on the backend, TypeScript and Angular on the frontend. I own features from the API to the interface.",
+      "Java and Spring Boot on the backend, TypeScript and Angular on the frontend.",
   },
   data: {
     title: "Databases",
@@ -132,7 +133,7 @@ export type AboutFact = { label: string; text: string };
 export const aboutFacts: AboutFact[] = [
   {
     label: "Work",
-    text: "Working student in health software since 2023. Sole developer of a sales demo tool shown at three trade fairs, now becoming a live web app.",
+    text: "Working student in health software since 2023. Sole developer of a sales demo tool shown at three trade fairs, now becoming a stable tool for the sales team.",
   },
   {
     label: "Studies",
@@ -194,7 +195,7 @@ export const milestones: Milestone[] = [
     year: "Since 2025",
     title: "Code and Context",
     description:
-      "Media Informatics at TH Köln: software development, design and start-up thinking. Thesis on an accessibility plugin with local LLMs.",
+      "The Studyprogramm Code and Context at TH Köln: software development, design and start-up thinking. Thesis on an accessibility plugin with local LLMs.",
   },
   {
     marker: "Working student",
