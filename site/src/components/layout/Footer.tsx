@@ -3,6 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { GitHubIcon } from "@/components/ui/icons";
 import { navLinks, profile } from "@/content/profile";
 
+/**
+ * Site footer. Contact's min-height subtracts this footer's height (about 14.1rem stacked
+ * on mobile, 7.6rem from md) so both fill one screen; adjust Contact when the height changes.
+ * The year is set at build time, which is fine for a site that is rebuilt on every change.
+ */
 export function Footer() {
   return (
     <footer className="border-t border-line py-12">
@@ -26,6 +31,7 @@ export function Footer() {
           >
             <GitHubIcon className="size-4" />
             GitHub
+            <span className="sr-only">(opens in a new tab)</span>
           </a>
         </nav>
 
