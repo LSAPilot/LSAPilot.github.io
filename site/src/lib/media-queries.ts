@@ -7,5 +7,8 @@ export const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 /** Cursor-following effects need a real pointer that can hover, so not touch devices. */
 export const CURSOR_MOTION_OK = `(hover: hover) and (pointer: fine) and ${MOTION_OK}`;
 
+/** Matches Tailwind's lg breakpoint. */
+export const DESKTOP = "(min-width: 1024px)";
+
 /** Pinning needs room next to the pinned column, so it is desktop only. */
-export const DESKTOP_MOTION_OK = `(min-width: 1024px) and ${MOTION_OK}`;
+export const DESKTOP_MOTION_OK = `${DESKTOP} and ${MOTION_OK}`;

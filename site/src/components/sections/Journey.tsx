@@ -6,7 +6,9 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { journey, type Milestone } from "@/content/profile";
 import { cx } from "@/lib/cx";
+import { DESKTOP } from "@/lib/media-queries";
 import { useScopedMotion } from "@/lib/motion";
+import { useMediaQuery } from "@/lib/use-media-query";
 
 type Tone = {
   color: string;
@@ -38,12 +40,27 @@ type MilestoneSliceProps = {
   tone: Tone;
   panelId: string;
   active: boolean;
+  /** Only the desktop layout collapses slices; on small screens every panel is open. */
+  collapsible: boolean;
   onActivate: () => void;
 };
 
-function MilestoneSlice({ milestone, tone, panelId, active, onActivate }: MilestoneSliceProps) {
+function MilestoneSlice({ milestone, tone, panelId, active, collapsible, onActivate }: MilestoneSliceProps) {
   const ref = useRef<HTMLLIElement>(null);
   useScopedMotion(ref, milestoneMotion);
+
+  const markerClass = "relative flex w-full items-start p-7 text-left md:p-8 lg:h-full";
+  const marker = (
+    <span
+      className={cx(
+        // Wraps on small screens so long markers are not cut off (WCAG 1.4.10).
+        "text-outline text-4xl leading-none font-black tracking-tight transition-colors duration-500 md:text-5xl lg:whitespace-nowrap",
+        active ? "lg:text-paper lg:[-webkit-text-stroke:0]" : "lg:rotate-180 lg:[writing-mode:vertical-rl]",
+      )}
+    >
+      {milestone.marker}
+    </span>
+  );
 
   return (
     <li
@@ -66,29 +83,29 @@ function MilestoneSlice({ milestone, tone, panelId, active, onActivate }: Milest
         className="pointer-events-none absolute top-0 left-0 size-[30rem] rounded-full bg-[radial-gradient(circle,color-mix(in_srgb,var(--tone)_var(--tone-hover),transparent),transparent_62%)] opacity-0 will-change-transform"
       />
 
-      <button
-        type="button"
-        aria-expanded={active}
-        aria-controls={panelId}
-        onFocus={onActivate}
-        onClick={onActivate}
-        className="relative flex w-full items-start p-7 text-left focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-accent md:p-8 lg:h-full"
-      >
-        <span
-          className={cx(
-            "text-outline text-4xl leading-none font-black tracking-tight whitespace-nowrap transition-colors duration-500 md:text-5xl",
-            active ? "lg:text-paper lg:[-webkit-text-stroke:0]" : "lg:rotate-180 lg:[writing-mode:vertical-rl]",
-          )}
+      {/* A real disclosure button only where the slice can actually collapse; otherwise
+          aria-expanded="false" would contradict a panel that is plainly visible. */}
+      {collapsible ? (
+        <button
+          type="button"
+          aria-expanded={active}
+          aria-controls={panelId}
+          onFocus={onActivate}
+          onClick={onActivate}
+          className={cx(markerClass, "focus-visible:-outline-offset-4")}
         >
-          {milestone.marker}
-        </span>
-      </button>
+          {marker}
+        </button>
+      ) : (
+        <div className={markerClass}>{marker}</div>
+      )}
 
       <div
         id={panelId}
         className={cx(
-          "relative px-7 pb-7 transition-opacity duration-500 md:px-8 md:pb-8 lg:absolute lg:inset-x-0 lg:bottom-0 lg:w-[min(28rem,100%)]",
-          active ? "lg:opacity-100 lg:delay-200" : "lg:pointer-events-none lg:opacity-0",
+          "relative px-7 pb-7 transition-[opacity,visibility] duration-500 md:px-8 md:pb-8 lg:absolute lg:inset-x-0 lg:bottom-0 lg:w-[min(28rem,100%)]",
+          // invisible, not just transparent: a collapsed panel must be hidden from screen readers too.
+          active ? "lg:visible lg:opacity-100 lg:delay-200" : "lg:invisible lg:opacity-0",
         )}
       >
         <p className="text-sm font-medium tracking-wide text-accent uppercase">{milestone.year}</p>
@@ -106,6 +123,7 @@ function MilestoneSlice({ milestone, tone, panelId, active, onActivate }: Milest
 export function Journey() {
   const { milestones } = journey;
   const [active, setActive] = useState(milestones.length - 1);
+  const collapsible = useMediaQuery(DESKTOP);
 
   return (
     <section aria-labelledby="journey-title" className="pb-32 md:pb-48">
@@ -120,6 +138,7 @@ export function Journey() {
               tone={TONES[index % TONES.length]}
               panelId={`milestone-${index}`}
               active={index === active}
+              collapsible={collapsible}
               onActivate={() => setActive(index)}
             />
           ))}
