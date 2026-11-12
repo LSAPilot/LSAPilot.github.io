@@ -1,5 +1,9 @@
-import { SparkIcon } from "@/components/ui/icons";
+"use client";
+
+import { useState } from "react";
+import { PauseIcon, PlayIcon, SparkIcon } from "@/components/ui/icons";
 import { focusAreas } from "@/content/profile";
+import { cx } from "@/lib/cx";
 
 function MarqueeRow({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -18,17 +22,28 @@ function MarqueeRow({ hidden = false }: { hidden?: boolean }) {
 
 /**
  * Endless typographic band of my focus areas. The row is rendered twice so the loop is
- * seamless; the copy is hidden from screen readers. Stands still for reduced motion.
+ * seamless; the copy is hidden from screen readers. It pauses on hover and has a pause
+ * button (WCAG 2.2.2); under reduced motion it stands still and the button is not needed.
  */
 export function TechMarquee() {
+  const [paused, setPaused] = useState(false);
+
   return (
-    <section aria-label="Focus areas" className="border-y border-line py-6 md:py-8">
-      <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-        <div className="flex w-max motion-safe:animate-marquee">
+    <section aria-label="Focus areas" className="relative border-y border-line py-6 md:py-8">
+      <div className="group flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+        <div className={cx("flex w-max motion-safe:animate-marquee group-hover:animation-paused", paused && "animation-paused")}>
           <MarqueeRow />
           <MarqueeRow hidden />
         </div>
       </div>
+      <button
+        type="button"
+        onClick={() => setPaused((value) => !value)}
+        aria-label={paused ? "Play scrolling text" : "Pause scrolling text"}
+        className="absolute top-1/2 right-3 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-paper/80 backdrop-blur transition-colors hover:text-paper motion-reduce:hidden"
+      >
+        {paused ? <PlayIcon className="size-4" /> : <PauseIcon className="size-4" />}
+      </button>
     </section>
   );
 }

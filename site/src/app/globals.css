@@ -104,3 +104,9 @@ body::after {
   color: transparent;
   -webkit-text-stroke: 1px rgb(244 241 255 / 0.35);
 }
+
+/* Pauses a CSS animation; used by the marquee's pause button. !important because the
+   animate-* utilities use the animation shorthand, which would reset the play state. */
+@utility animation-paused {
+  animation-play-state: paused !important;
+}

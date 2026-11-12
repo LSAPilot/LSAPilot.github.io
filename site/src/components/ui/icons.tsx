@@ -2,6 +2,22 @@ type IconProps = {
   className?: string;
 };
 
+export function PauseIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className={className}>
+      <path d="M5 3.5h2v9H5zM9 3.5h2v9H9z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function PlayIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className={className}>
+      <path d="M5 3.2v9.6a.5.5 0 0 0 .76.43l7.6-4.8a.5.5 0 0 0 0-.86l-7.6-4.8A.5.5 0 0 0 5 3.2Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function ArrowIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={className}>
