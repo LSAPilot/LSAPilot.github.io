@@ -26,7 +26,9 @@ export type Project = {
 
 export type Skill = {
   title: string;
-  description: string;
+  /** Technologies shown as a list under the title. */
+  items?: string[];
+  description?: string;
 };
 
 export type Milestone = {
@@ -106,18 +108,17 @@ export const techStack: string[] = [
 ];
 
 export const skills = {
-  fullstack: {
-    title: "Full-stack development",
-    description:
-      "Java and Spring Boot on the backend, TypeScript and Angular on the frontend.",
+  languages: {
+    title: "Programming languages",
+    items: ["Java", "Spring Boot", "TypeScript", "Angular"],
   },
-  data: {
+  databases: {
     title: "Databases",
-    description: "MongoDB and Postgres, from data modelling to queries.",
+    items: ["MongoDB", "Postgres"],
   },
-  delivery: {
-    title: "Git and Docker",
-    description: "Versioned, reproducible work on shared code.",
+  devops: {
+    title: "DevOps",
+    items: ["Git", "Docker"],
   },
   ai: {
     title: "AI-assisted coding",
